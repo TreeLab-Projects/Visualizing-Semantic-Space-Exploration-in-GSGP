@@ -196,7 +196,23 @@ logPath={}
         red.get_current_process()
 
         # TODO: Make this path configurable instead of hardcoded
-        html_file_path = '/media/turing/Respaldo/graficas/visualizacionFinal.html'
+        # Obtener directorio actual
+        directory = os.getcwd()
+        entries = os.listdir(directory)
+
+        # Buscar el archivo HTML
+        html_file_path = None
+        for entry in entries:
+            if entry.startswith(self.name_run1) and entry.endswith('.html'):
+                html_file_path = os.path.join(directory, entry)
+                break
+
+        # Ahora tienes la ruta en html_file_path
+        if html_file_path:
+            print(f"Archivo encontrado en: {html_file_path}")
+        else:
+            print("No se encontró el archivo HTML")
+                # html_file_path = '/media/turing/Respaldo/graficas/index.html'
         abs_path = os.path.abspath(html_file_path)
         
         # Open results in browser
