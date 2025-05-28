@@ -49,11 +49,11 @@ Special generation values:
 ## <a name='Visualizations'></a>Visualizations
 The following images are visualizations on concrete dataset: 
 
-![t-sne](/results/tsne/gsm/general_plot/concrete_new_plots/train_820.png?raw=true "T-sne's result on Concrete")
+![t-sne](results/tsne/gsm/general_plot/concrete_new_plots/train_820.png?raw=true "T-sne's result on Concrete")
 
-![t-sne](/results/tsne/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
+![t-sne](results/tsne/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
 
-![t-sne](/results/tsne/gsm/trace_rts/concrete_new_plots/train_820.png?raw=true "T-sne's result with trace with random trees on Concrete")
+![t-sne](results/tsne/gsm/trace_rts/concrete_new_plots/train_820.png?raw=true "T-sne's result with trace with random trees on Concrete")
 ## ⚙️ GSGP-CUDA Backend
 
 This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for efficient GSGP training on the GPU.
