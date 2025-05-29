@@ -6,14 +6,13 @@ This project provides an interactive web interface to visualize the learning dyn
 
 ## 🌐 Web Interface Overview
 
-The web tool allows dynamic and detailed exploration of the semantic evolution during training. To use it:
+The web tool allows dynamic and detailed exploration of the semantic evolution during training.
 
 ## 🚀 Live Demo
 
-Explore the interactive semantic space visualizer here:
+👉 **[Launch the Interactive Web Interface](https://treelab-projects.github.io/Visualizing-Semantic-Space-Exploration-in-GSGP/)** 👈
 
-👉 **[Launch Web Interface](https://treelab-projects.github.io/Visualizing-Semantic-Space-Exploration-in-GSGP/)** 👈
-
+## 🛠️ How to Use It
 
 1. **Upload your CSV**:
    - Go to **"CSV File" > "Customize Input File"** to select active columns.
