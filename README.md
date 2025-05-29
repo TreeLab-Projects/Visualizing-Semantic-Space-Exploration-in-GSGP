@@ -54,6 +54,14 @@ The following images are visualizations on concrete dataset:
 ![t-sne](results/tsne/population_64/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
 
 ![t-sne](results/tsne/population_64/gsm/trace_rts/concrete_new_plots/train_820.png?raw=true "T-sne's result with trace with random trees on Concrete")
+
+
+## 🎞️ Semantic Evolution Demo
+
+(results/demo/semantic_evolution.gif)
+
+![Semantic Evolution t-sne](results/tsne/population_64/gsm/semantic_evolution.gif)
+
 ## ⚙️ GSGP-CUDA Backend
 
 This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for efficient GSGP training on the GPU.
