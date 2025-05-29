@@ -14,8 +14,6 @@ The web tool allows dynamic and detailed exploration of the semantic evolution d
 
 ## 🛠️ How to Use It
 
-## 🛠️ How to Use It
-
 1. **Upload your CSV**:
    - Go to **"CSV File" > "Customize Input File"** to select active columns.
    - Essential columns: `Component 1`, `Component 2`, `Generation`.
