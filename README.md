@@ -134,11 +134,11 @@ est.train_and_evaluate_model(X_train, y_train, X_test, y_test)
 ```
 🔹 This script will:
 
-Train a GSGP model using your dataset.
+   * Train a GSGP model using your dataset.
 
-Automatically generate two CSV files (for train and test) after the evolution process.
+   * Automatically generate two CSV files (for train and test) after the evolution process.
 
-Launch the interactive web interface so you can load and explore the generated data.
+   * Launch the interactive web interface so you can load and explore the generated data.
 
 📁 The output CSVs will be compatible with our visualization tool, and ready to upload directly.
 ---
