@@ -79,7 +79,7 @@ This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for eff
 
 ```bash
 nvcc -std=c++11 -O0 GsgpCuda.cu -o GsgpCuda.x -lcublas
-
+```
 
 ## Researchers 🧑‍🔬
 - *Dr. Leonardo Trujillo Reyes* <br />
