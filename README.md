@@ -68,6 +68,9 @@ The following images are visualizations on concrete dataset:
 
 ![Semantic Evolution t-sne](assets/semantic_evolution.gif?raw=true "T-sne's result with trace with random trees on Concrete")
 
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result with random trees on Concrete")
+
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_with_trace.gif?raw=true "T-sne's result with trace with random trees on Concrete")
 
 ## ⚙️ GSGP-CUDA Backend
 
