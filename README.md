@@ -79,3 +79,22 @@ This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for eff
 
 ```bash
 nvcc -std=c++11 -O0 GsgpCuda.cu -o GsgpCuda.x -lcublas
+
+
+## Researchers 🧑‍🔬
+- *Dr. Leonardo Trujillo Reyes* <br />
+ leonardo.trujillo.ttl@gmail.com<br />
+https://orcid.org/0000-0003-1812-5736
+
+- *PhD. Student Joel L. Nation* <br />
+joelleenation@gmail.com <br />
+https://orcid.org/0000-0001-6409-9597
+
+- *PhD. Student Jose Manuel Muñoz Contreras* <br />
+lamorales@conacyt.mx <br />
+https://orcid.org/0009-0007-7134-8708
+
+- *Ing. Diana Sarai Hernandez Fierro* <br />
+l20211976@tectijuana.edu.mx <br />
+
+
