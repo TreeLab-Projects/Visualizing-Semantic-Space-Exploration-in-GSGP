@@ -91,7 +91,7 @@ joelleenation@gmail.com <br />
 https://orcid.org/0000-0001-6409-9597
 
 - *PhD. Student Jose Manuel Muñoz Contreras* <br />
-lamorales@conacyt.mx <br />
+jose.munoz17@tectijuana.edu.mx <br />
 https://orcid.org/0009-0007-7134-8708
 
 - *Ing. Diana Sarai Hernandez Fierro* <br />
