@@ -132,6 +132,15 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.70, test_
 # Train and evaluate
 est.train_and_evaluate_model(X_train, y_train, X_test, y_test)
 ```
+🔹 This script will:
+
+Train a GSGP model using your dataset.
+
+Automatically generate two CSV files (for train and test) after the evolution process.
+
+Launch the interactive web interface so you can load and explore the generated data.
+
+📁 The output CSVs will be compatible with our visualization tool, and ready to upload directly.
 ---
 
 ## Researchers 🧑‍🔬
