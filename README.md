@@ -81,6 +81,59 @@ This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for eff
 nvcc -std=c++11 -O0 GsgpCuda.cu -o GsgpCuda.x -lcublas
 ```
 
+---
+
+## 🧪 Generating Your Own Data
+
+If you want to train a model and visualize the semantic evolution using our web interface, you can use the following Python script:
+
+```python
+import gs
+import pandas as pd
+import sklearn 
+from sklearn.model_selection import train_test_split
+import random
+import numpy as np
+import statistics as stats
+
+# Load your dataset (example path provided)
+path = ""
+df = pd.read_csv(path, header=None, sep='\s+')
+
+# Define rows and columns
+nrow = len(df.index)
+nvar = df.shape[1]
+
+# Separate features and target
+X = df.iloc[0:nrow, 0:nvar-1]
+y = df.iloc[:nrow, nvar-1]
+
+# Initialize GSGP-CUDA regressor
+est = gs.GSGPCudaRegressor(
+    g=200,
+    pop_size=64,
+    max_len=1024,
+    func_ratio=0.5,
+    variable_ratio=0.5,
+    max_rand_constant=10,
+    sigmoid=1,
+    error_function=0,
+    oms=0,
+    normalize=0,
+    do_min_max=0,
+    protected_division=1,
+    visualization=0
+)
+
+# Split the dataset
+n = random.randint(0, 9000)
+X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.70, test_size=0.30, random_state=n)
+
+# Train and evaluate
+est.train_and_evaluate_model(X_train, y_train, X_test, y_test)
+```
+---
+
 ## Researchers 🧑‍🔬
 - *Dr. Leonardo Trujillo Reyes* <br />
  leonardo.trujillo.ttl@gmail.com<br />

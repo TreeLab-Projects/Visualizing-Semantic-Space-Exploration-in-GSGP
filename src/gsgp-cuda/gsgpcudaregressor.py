@@ -2,17 +2,9 @@ import gs
 import pandas as pd
 import sklearn 
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_absolute_percentage_error
-from sklearn.metrics import r2_score
-from sklearn.metrics import mean_squared_error
-from sklearn import preprocessing 
 import random
 import numpy as np
 import statistics as stats
-import math
-import os
-import shutil
 
 # Load data of problem 
 path =  "/media/turing/Respaldo/graficas/train_10107_30.txt"
