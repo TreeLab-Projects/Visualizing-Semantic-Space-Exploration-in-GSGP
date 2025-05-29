@@ -58,8 +58,6 @@ The following images are visualizations on concrete dataset:
 
 ## 🎞️ Semantic Evolution Demo
 
-(results/demo/semantic_evolution.gif)
-
 ![Semantic Evolution t-sne](results/tsne/population_64/gsm/semantic_evolution.gif)
 
 ## ⚙️ GSGP-CUDA Backend
