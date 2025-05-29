@@ -147,7 +147,7 @@ est.train_and_evaluate_model(X_train, y_train, X_test, y_test)
 https://orcid.org/0000-0003-1812-5736
 
 - *PhD. Student Joel L. Nation* <br />
-joelleenation@gmail.com <br />
+joel.nation19@tectijuana.edu.mx <br />
 https://orcid.org/0000-0001-6409-9597
 
 - *PhD. Student Jose Manuel Muñoz Contreras* <br />
