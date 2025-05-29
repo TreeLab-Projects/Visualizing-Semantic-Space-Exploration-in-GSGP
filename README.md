@@ -14,10 +14,14 @@ The web tool allows dynamic and detailed exploration of the semantic evolution d
 
 ## 🛠️ How to Use It
 
+## 🛠️ How to Use It
+
 1. **Upload your CSV**:
    - Go to **"CSV File" > "Customize Input File"** to select active columns.
    - Essential columns: `Component 1`, `Component 2`, `Generation`.
    - Click **"Select CSV File"** to load your data.
+   - 👉 Alternatively, you can use the example file provided in the repository: [`output_file.csv`](output_file.csv)
+
 
 2. **Visualization Controls** (top-left menu):
    - **Color Palette**: Choose from Viridis, Magma, Cividis, Blue-Red, Purple-Pink, or Electromagnetic Spectrum.
