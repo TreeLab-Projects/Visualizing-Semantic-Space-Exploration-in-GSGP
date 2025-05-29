@@ -58,7 +58,7 @@ The following images are visualizations on concrete dataset:
 
 ## 🎞️ Semantic Evolution Demo
 
-![Semantic Evolution t-sne](results/tsne/population_64/gsm/semantic_evolution.gif?raw=true "T-sne's result with trace with random trees on Concrete")
+![Semantic Evolution t-sne](assets/semantic_evolution.gif?raw=true "T-sne's result with trace with random trees on Concrete")
 
 
 ## ⚙️ GSGP-CUDA Backend
