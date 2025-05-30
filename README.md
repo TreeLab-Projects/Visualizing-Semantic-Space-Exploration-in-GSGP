@@ -90,6 +90,12 @@ This comprehensive visualization combines the 3D semantic space. It shows the co
 
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_with_trace.gif?raw=true "T-sne's result with trace with random trees on Concrete")
 
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with Gsm-Oms
+
+This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with Gsm with Oms.
+
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation_oms.gif?raw=true "T-sne's result with random trees on Concrete")
+
 ## ⚙️ GSGP-CUDA Backend
 
 This project relies on [GSGP-CUDA](git@gitlab.com:Jmmc9122/gsgpcuda.git) for efficient GSGP training on the GPU.
