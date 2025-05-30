@@ -77,13 +77,7 @@ This visualization performs a complete incremental projection of the 2D semantic
 
 ## 🎞️ Semantic Evolution Demo
 
-### 3D T-SNE Visualization of Semantic Space
-
-A three-dimensional perspective that reveals the semantic structure from multiple angles. This rotating view exposes clustering patterns and relationships between semantic representations that are not visible in the 2D projection.
-
-![Semantic Evolution t-sne](assets/semantic_evolution.gif?raw=true "T-sne's result with random trees on Concrete")
-
-### 3D Incremental Rotation View
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View
 
 This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search.
 
