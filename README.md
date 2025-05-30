@@ -69,6 +69,9 @@ This visualization performs a complete incremental projection of the 2D semantic
 ![t-sne](results/tsne/population_64/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
 
 ### 2D Evolution with Path Tracking of the Best Individual Indicating the Random Trees at Each Mutation Event
+
+This visualization performs a complete incremental projection of the 2D semantic space. It shows semantic change during evolution, with a gradual shift between points. It also plots the search for the best individual in the semantic space, indicating the random trees that were present at the mutation event.
+
 ![t-sne](results/tsne/population_64/gsm/trace_rts/concrete_new_plots/train_820.png?raw=true "T-sne's result with trace with random trees on Concrete")
 
 
