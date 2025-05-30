@@ -55,12 +55,20 @@ Special generation values:
 
 ---
 ## <a name='Visualizations'></a>Visualizations
-The following images are visualizations on concrete dataset: 
+
+### 2D T-SNE Visualization of Semantic Space
+
+This visualization performs a complete incremental projection of the 2D semantic space, showing the change between semantics during evolution with a gradual shift between points.
 
 ![t-sne](results/tsne/population_64/gsm/general_plot/concrete_new_plots/train_820.png?raw=true "T-sne's result on Concrete")
 
+### 2D Evolution with Trajectory Tracking of Best Individual
+
+This visualization performs a complete incremental projection of the 2D semantic space. It shows the change between semantics during evolution with a gradual change between points. It also plots the search for the best individual over the semantic space.
+
 ![t-sne](results/tsne/population_64/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
 
+### 2D Evolution with Path Tracking of the Best Individual Indicating the Random Trees at Each Mutation Event
 ![t-sne](results/tsne/population_64/gsm/trace_rts/concrete_new_plots/train_820.png?raw=true "T-sne's result with trace with random trees on Concrete")
 
 
@@ -79,6 +87,7 @@ This visualization performs a complete incremental projection of the 3D semantic
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result with random trees on Concrete")
 
 ### 3D Evolution with Temporal Trajectory Tracking
+
 This comprehensive visualization combines the 3D semantic space. It shows the complete semantic evolution and also illustrates the learning trajectory of the best individual.
 
 
