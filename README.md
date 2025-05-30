@@ -66,9 +66,21 @@ The following images are visualizations on concrete dataset:
 
 ## 🎞️ Semantic Evolution Demo
 
-![Semantic Evolution t-sne](assets/semantic_evolution.gif?raw=true "T-sne's result with trace with random trees on Concrete")
+### 3D T-SNE Visualization with Evolutionary Trace
+
+This visualization demonstrates semantic evolution in a two-dimensional space using t-SNE dimensionality reduction.
+
+![Semantic Evolution t-sne](assets/semantic_evolution.gif?raw=true "T-sne's result with random trees on Concrete")
+
+### 3D Incremental Rotation View
+
+A three-dimensional perspective that reveals the semantic structure from multiple angles. This rotating view exposes clustering patterns and relationships between semantic representations that are not visible in the 2D projection.
 
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result with random trees on Concrete")
+
+### 3D Evolution with Temporal Trajectory Tracking
+This comprehensive visualization combines the 3D semantic space. It shows the complete semantic evolution and also illustrates the learning trajectory of the best individual.
+
 
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_with_trace.gif?raw=true "T-sne's result with trace with random trees on Concrete")
 
