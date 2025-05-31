@@ -56,19 +56,19 @@ Special generation values:
 ---
 ## <a name='Visualizations'></a>Visualizations
 
-### 2D T-SNE Visualization of Semantic Space
+### 2D T-SNE Visualization of Semantic Space with GSM
 
 This visualization performs a complete incremental projection of the 2D semantic space, showing the change between semantics during evolution with a gradual shift between points.
 
 ![t-sne](results/tsne/population_64/gsm/general_plot/concrete_new_plots/train_820.png?raw=true "T-sne's result on Concrete")
 
-### 2D Evolution with Trajectory Tracking of Best Individual
+### 2D Evolution with Trajectory Tracking of Best Individual with GSM
 
 This visualization performs a complete incremental projection of the 2D semantic space. It shows the change between semantics during evolution with a gradual change between points. It also plots the search for the best individual over the semantic space.
 
 ![t-sne](results/tsne/population_64/gsm/trace/concrete_new_plots/train_820.png?raw=true "T-sne's result result with trace on Concrete")
 
-### 2D Evolution with Path Tracking of the Best Individual Indicating the Random Trees at Each Mutation Event
+### 2D Evolution with Path Tracking of the Best Individual Indicating the Random Trees at Each Mutation Event with GSM
 
 This visualization performs a complete incremental projection of the 2D semantic space. It shows semantic change during evolution, with a gradual shift between points. It also plots the search for the best individual in the semantic space, indicating the random trees that were present at the mutation event.
 
@@ -77,24 +77,24 @@ This visualization performs a complete incremental projection of the 2D semantic
 
 ## 🎞️ Semantic Evolution Demo
 
-### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with GSM
 
 This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search.
 
-![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result with random trees on Concrete")
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result with random trees on Concrete with GSM")
 
-### 3D Evolution with Temporal Trajectory Tracking
+### 3D Evolution with Temporal Trajectory Tracking with GSM
 
 This comprehensive visualization combines the 3D semantic space. It shows the complete semantic evolution and also illustrates the learning trajectory of the best individual.
 
 
-![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_with_trace.gif?raw=true "T-sne's result with trace with random trees on Concrete")
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_with_trace.gif?raw=true "T-sne's result with trace with random trees on Concrete with GSM")
 
-### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with Gsm-Oms
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with GSM-OMS
 
 This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with Gsm with Oms.
 
-![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation_oms.gif?raw=true "T-sne's result with random trees on Concrete")
+![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation_oms.gif?raw=true "T-sne's result with random trees on Concrete with GSM-OMS")
 
 ## ⚙️ GSGP-CUDA Backend
 
