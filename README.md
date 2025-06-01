@@ -96,15 +96,19 @@ This visualization performs a complete incremental projection of the 3D semantic
 
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation_oms.gif?raw=true "T-sne's result with random trees on Concrete with GSM-OMS")
 
-### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with SLIM-GSGP
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation - SLIM-GSGP
 
-This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with GSM.
+**Repository:** [SLIM - DALabNOVA](https://github.com/DALabNOVA/slim)
+
+This visualization presents an incremental three-dimensional projection of the semantic space during SLIM-GSGP (Semantic Learning algorithm with Inflate and deflate Mutations) evolution. The visualization reveals how semantic search evolves throughout the evolutionary process, showing the transformations in semantic space that characterize this geometric semantic genetic programming algorithm.
 
 ![Semantic Evolution t-sne](assets/slim_gsgp_visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result on Concrete with SLIM-GSGP")
 
-### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with GPLEARN
+### 3D T-SNE Visualization of GPLearn Learning Process in Semantic Space
 
-This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with GPLEARN.
+This visualization performs a complete incremental projection of the 3D semantic space captured during GPLEARN evolution. Although GPLEARN performs syntactic search by default, we stored the semantic information of each new population across generations to observe and analyze the learning behavior and semantic evolution patterns of the GPLEARN algorithm.
+
+**Repository:** [gplearn - Trevor Stephens](https://github.com/trevorstephens/gplearn)
 
 ![Semantic Evolution t-sne](assets/gp_learn_visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result on Concrete with GPLEARN")
 
