@@ -92,9 +92,21 @@ This comprehensive visualization combines the 3D semantic space. It shows the co
 
 ### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with GSM-OMS
 
-This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with Gsm with Oms.
+This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with GSM with OMS.
 
 ![Semantic Evolution t-sne](assets/visual_semantic_3D_incremental_rotation_oms.gif?raw=true "T-sne's result with random trees on Concrete with GSM-OMS")
+
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with SLIM-GSGP
+
+This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with GSM.
+
+![Semantic Evolution t-sne](assets/slim_gsgp_visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result on Concrete with SLIM-GSGP")
+
+### 3D T-SNE Visualization of Semantic Space with Incremental Rotation View with GPLEARN
+
+This visualization performs a complete incremental projection of the 3D semantic space. It shows the change between semantics during evolution, revealing the behavior of semantic search with GPLEARN.
+
+![Semantic Evolution t-sne](assets/gp_learn_visual_semantic_3D_incremental_rotation.gif?raw=true "T-sne's result on Concrete with GPLEARN")
 
 ## ⚙️ GSGP-CUDA Backend
 
