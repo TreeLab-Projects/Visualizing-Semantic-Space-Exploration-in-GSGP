@@ -734,91 +734,76 @@ void countInputFile(std::string fileName, int &rows, int &cols){
 * \date      05/10/2020
 * \author    José Manuel Muñoz Contreras, Leonardo Trujillo, Daniel E. Hernandez, Perla Juárez Smith
 * \file      GsgpCuda.cpp
-*/
-__host__ void readConfigFile(string path,cfg *config){
-  // std::fstream f("configuration.ini", ios::in);
-  // printf("path desde el ini %s\n", path.c_str());
-  std::fstream f(path, ios::in);
-  if (!f.is_open()){
-    cerr<<"CONFIGURATION FILE NOT FOUND." << endl;
-    exit(-1);
+*/__host__ void readConfigFile(string path, cfg *config) {
+     
+  ifstream f(path);
+  if (!f.is_open()) {
+      cerr << "CONFIGURATION FILE NOT FOUND." << endl;
+      exit(-1);
   }
-  int k=0;
-  while(!f.eof()){
-    char str[100]="";
-    char str1[100]="";
-    char str2[100]="";
-    int j=0;
-    f.getline(str,100);
-    if(str[0]!='\0'){
-      while(str[j]!='='){
-    	  if (str[j]!=' ')
-    		  str1[j] = str[j];
-    	  else
-    		  str1[j] = '\0';
-    	  j++;
+
+  string line;
+  while (getline(f, line)) {
+      // Skip empty lines and comments
+      if (line.empty() || line[0] == '#') continue;
+
+      // Find the delimiter
+      size_t delimiter_pos = line.find('=');
+      if (delimiter_pos == string::npos) continue;
+
+      // Extract key and value
+      string key = line.substr(0, delimiter_pos);
+      string value = line.substr(delimiter_pos + 1);
+      
+      // Trim whitespace
+      key.erase(0, key.find_first_not_of(" \t"));
+      key.erase(key.find_last_not_of(" \t") + 1);
+      value.erase(0, value.find_first_not_of(" \t"));
+      value.erase(value.find_last_not_of(" \t") + 1);
+
+      // Parse values
+      if (key == "numberGenerations") 
+          config->numberGenerations = stoi(value);
+      else if (key == "populationSize") 
+          config->populationSize = stoi(value);
+      else if (key == "maxIndividualLength") 
+          config->maxIndividualLength = stoi(value);
+      else if (key == "functionRatio") 
+          config->functionRatio = stod(value);
+      else if (key == "variableRatio") 
+          config->variableRatio = stod(value);
+      else if (key == "maxRandomConstant") 
+          config->maxRandomConstant = stod(value);
+      else if (key == "sigmoid") 
+          config->sigmoid = stoi(value);
+      else if (key == "errorFunction") 
+          config->errorFunction = stoi(value);
+      else if (key == "oms") 
+          config->oms = stoi(value);
+      else if (key == "normalize") 
+          config->normalize = stoi(value);
+      else if (key == "do_min_max") 
+          config->do_min_max = stoi(value);
+      else if (key == "protected_division") 
+          config->protected_division = stoi(value);
+      else if (key == "visualization") 
+          config->visualization = stoi(value);
+      else if (key == "logPath") {
+          // Ensure the path ends with '/'
+          if (!value.empty() && value.back() != '/') {
+              value += '/';
+          }
+          strncpy(config->logPath, value.c_str(), sizeof(config->logPath) - 1);
+          config->logPath[sizeof(config->logPath) - 1] = '\0';
       }
-      j++;
-      int i=0;
-      while(str[j]==' '){
-        j++;
-      }
-      while(str[j]!='\0'){
-        str2[i] = str[j];
-        j++;
-        i++;
-      }
-    }
+  }
+  f.close();
 
-    if (strcmp(str1, "numberGenerations")==0)
-    	config->numberGenerations=atoi(str2);
-
-    if (strcmp(str1, "populationSize")==0)
-    	config->populationSize =atoi(str2);
-
-    if (strcmp(str1, "maxIndividualLength")==0)
-    	config->maxIndividualLength=atoi(str2);
-
-    if (strcmp(str1, "functionRatio")==0)
-      config->functionRatio =atof(str2);
-
-    if (strcmp(str1, "variableRatio")==0)
-      config->variableRatio =atof(str2);
-
-    if (strcmp(str1, "maxRandomConstant")==0)
-    	config->maxRandomConstant=atof(str2);
-
-    if (strcmp(str1, "sigmoid")==0)
-      config->sigmoid=atoi(str2);
-
-    if (strcmp(str1, "errorFunction")==0)
-      config->errorFunction=atoi(str2);
-
-    if (strcmp(str1, "oms")==0)
-    	config->oms=atoi(str2);
-
-    if (strcmp(str1, "normalize")==0)
-    	config->normalize=atoi(str2);
-
-    if (strcmp(str1, "do_min_max")==0)
-    	config->do_min_max=atoi(str2);
-    
-    if (strcmp(str1, "protected_division")==0)
-    	config->protected_division=atoi(str2);
-
-    if (strcmp(str1, "visualization")==0)
-    	config->visualization=atoi(str2);
-
-    if (strcmp(str1, "logPath")==0)
-    	strcpy(config->logPath, str2);
-
-    k++;
-  } 
-    f.close();
-    if(config->populationSize<0 || config->maxIndividualLength<0 ){
-        cout<<"ERROR: POPULATION SIZE AND MAX DEPTH MUST BE SMALLER THAN (OR EQUAL TO) 0 AND THEIR SUM SMALLER THAN (OR EQUAL TO) 1.";
-        exit(-1);
-    }
+  // Validation
+  if (config->populationSize <= 0 || config->maxIndividualLength <= 0) {
+      cerr << "ERROR: POPULATION SIZE AND MAX DEPTH MUST BE POSITIVE VALUES." << endl;
+      exit(-1);
+  }
 }
 
 /*!
@@ -934,7 +919,7 @@ __host__ void markTracesGeneration(entry *vectorTraces, int populationSize, int 
 __host__ void saveTrace(std::string name, std::string path, entry *structSurvivor, int generation, int populationSize){
   cudaDeviceSynchronize();
   std::string tmpT = name;
-  std::string tmpExt = "_trace.csv";
+  std::string tmpExt = "_best_trace.csv";
   tmpT = path + tmpT  +tmpExt;  
   std::ofstream trace(tmpT,ios::out);
   int r=0;
@@ -999,7 +984,7 @@ __host__ void saveTraceComplete(std::string path, entry *structSurvivor, int gen
 */
 
 __host__ void saveIndividuals(std::string path, float *hInitialPopulation, std::string namePopulation ,int sizeMaxDepthIndividual, int populationSize){  
-  namePopulation = path + namePopulation;       
+  namePopulation = path + namePopulation; 
   std::ofstream outIndividuals(namePopulation,ios::out);
   for (int i=0; i< (populationSize); i++){
       for (int j=0; j<sizeMaxDepthIndividual; j++){
@@ -1174,7 +1159,7 @@ float *randomTrees, std::ofstream& OUT, std::string log, int nrow, int nvarTest,
   list_dir(log,path,1,filesRa);
   int tama = filesRa.size();
   std::string nameFile = filesRa[0];
-  char tracePath[500] = "";
+  char tracePath[50000] = "";
   strcat(tracePath,log.c_str());
   strcat(tracePath,nameFile.c_str());
   vector <double> eval_;
@@ -2050,8 +2035,8 @@ void expre_model(std::string name, std::string path, int pop [],
  int rt [], cfg config, float *hNormalizeData){
   std:: string model="";
   std::string tmpT = name;
-  std::string tmpExt = "_trace.csv";
-  tmpT = path +"/"+ name + tmpExt; 
+  std::string tmpExt = "best_trace.csv";
+  tmpT = path + name+'_' + tmpExt; 
   
   std::string nameModel = "_ModelExpression";
   std::string exMo = path +"/"+ name +nameModel  +tmpExt;  

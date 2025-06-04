@@ -409,16 +409,18 @@ def get_current_process():
         print("Fitness training data loaded successfully.")
         
         # Load trace evolution data
-        archivos_filtrados = [nombre for nombre in entries if "_trace.csv" in nombre]
-        for elemento in archivos_filtrados:
-            print(f"Found trace file: {elemento}")
+        archivos_filtrados = [nombre for nombre in entries if "best_trace.csv" in nombre]
         
-        element = n_d + '/' + elemento
+        archivo_mas_corto = min(archivos_filtrados, key=len)
+        
+        element = n_d + '/' + archivo_mas_corto
+        
+        
         df_trace = pd.read_csv(element, header=None,sep='\s+')
         # Remove corrupted entries marked with ***
         df_trace = df_trace[~df_trace.apply(lambda row: row.astype(str).str.contains('\*\*\*').any(), axis=1)]
         df_trace = df_trace.reset_index(drop=True)
-        
+      
         # Create results directory
         results_dir = os.path.join(n_d, "dimension_reduction_results")
         if not os.path.exists(results_dir):

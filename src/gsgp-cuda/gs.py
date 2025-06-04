@@ -11,6 +11,7 @@ import re
 from sympy import (sympify, symbols, preorder_traversal, Function, sqrt, 
                    SympifyError)
 import visual_process as red
+import shlex
 
 # Global directory reference
 this_dir = os.path.dirname(os.path.realpath(__file__))
@@ -84,7 +85,7 @@ class GSGPCudaRegressor(BaseEstimator):
         # Setup file and directory names
         self.exe_name = 'GsgpCuda.x'
         self.name_run1 = str(np.random.randint(2**15-1))
-        self.log_path = os.path.join(this_dir, self.name_run1) + '/'
+        self.log_path = this_dir + '/' + self.name_run1 + '/'
         
         # Initialize model storage variables
         self.symbolic_model_simplified = ''
@@ -140,8 +141,8 @@ logPath={}
     def _create_configuration_file(self, config_text):
         """Create the configuration INI file for the CUDA executable."""
         self.name_ini = os.path.join(self.log_path, f"{self.name_run1}_configuration.ini")
-        with open(self.name_ini, "w") as f:
-            f.write(config_text)
+        ffile = open(self.name_ini, "w")
+        ffile.write(config_text)
         time.sleep(1)  # Ensure file is written before proceeding
 
     def train_and_evaluate_model(self, X_train, y_train, X_test, y_test):
@@ -182,14 +183,25 @@ logPath={}
         time.sleep(1)
         
         # Execute CUDA program for training and testing
-        subprocess.call(' '.join([
+        print("Starting GSGP training and evaluation...")
+        # Usando shlex.quote para manejar rutas complejas
+        cmd = [
             os.path.join(this_dir, self.exe_name),
             '-train_file', os.path.join(this_dir, 'train.csv'),
             '-test_file', os.path.join(this_dir, 'test.csv'),
             '-output_model', self.name_run1,
             '-log_path', self.name_ini
-        ]), shell=True, cwd=this_dir)
-        
+        ]
+
+        # subprocess.call(cmd, cwd=this_dir)
+        command = ' '.join([shlex.quote(arg) for arg in cmd])
+        subprocess.call(command, shell=True, cwd=this_dir)
+
+        print("GSGP training and evaluation completed.")
+
+        # Construir el comando
+
+
         time.sleep(1)
 
         # Generate dimensionality reduction visualizations
@@ -203,18 +215,18 @@ logPath={}
         # Buscar el archivo HTML
         html_file_path = None
         for entry in entries:
-            if entry.startswith(self.name_run1) and entry.endswith('.html'):
+            if entry.endswith('.html'):
                 html_file_path = os.path.join(directory, entry)
                 break
 
         # Ahora tienes la ruta en html_file_path
         if html_file_path:
-            print(f"Archivo encontrado en: {html_file_path}")
+            print(f"File in: {html_file_path}")
         else:
-            print("No se encontró el archivo HTML")
+            print("No found HTML")
                 # html_file_path = '/media/turing/Respaldo/graficas/index.html'
         abs_path = os.path.abspath(html_file_path)
-        
+        print(f"Absolute path to visualization: {abs_path}")
         # Open results in browser
         if os.path.exists(abs_path):
             webbrowser.open(f'file://{abs_path}')

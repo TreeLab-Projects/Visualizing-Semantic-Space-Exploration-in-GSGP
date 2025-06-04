@@ -101,7 +101,7 @@ typedef struct cfg_{
   int do_min_max;
   int protected_division;
   int visualization;
-  char logPath[100];        
+  char logPath[5000];        
 }cfg;
 
 /// struct variable containing the values of the parameters specified in the configuration.ini file
@@ -517,7 +517,7 @@ __host__ void readInpuData(char *trainFile, char *testFile, float *dataTrain, fl
  float *dataTestTarget, int nrow, int nvar, int nrowTest, int nvarTest);
 
 /*!
-* \fn        __host__ void readConfigFile(cfg *config)
+* \fn        __host__ void readConfigFile(string path,cfg *config)
 * \brief     Function that reads the configuration file where the parameters are found to initialize the algorithm.
 * \param     cfg *config: pointer to the struct containing the variables needed to run the program
 * \return    void
@@ -525,7 +525,7 @@ __host__ void readInpuData(char *trainFile, char *testFile, float *dataTrain, fl
 * \author    José Manuel Muñoz Contreras, Leonardo Trujillo, Daniel E. Hernandez, Perla Juárez Smith
 * \file      GsgpCuda.h
 */
-__host__ void readConfigFile(cfg *config);
+__host__ void readConfigFile(string path,cfg *config);
 
 /*!
 * \fn        __host__ void countInputFile(std::string fileName, int &rows, int &cols)

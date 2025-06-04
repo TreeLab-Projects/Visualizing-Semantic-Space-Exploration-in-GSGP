@@ -35,13 +35,13 @@ int main(int argc, char **argv){
     cudaSetDevice(0); /*!< Select a GPU device*/    
     srand(time(NULL)); /*!< Initialization of the seed for the generation of random numbers*/
 
-    char trainFile[500]="";    /*!< Name of the train file*/
-    char testFile[500]="";     /*!< Name of the test file*/
-    char output_model[500]=""; /*!< Name of output files*/
-    char pathTrace[500]="";    /*!< Name of the file trace of best model*/
-    char path_test[500]="";    /*!< Name of the file with unsseen test instances*/
-    char pathOutFile[500]="";  /*!< Name of the file to output values*/
-    char pathIniFile[500]="";  /*!< Name of the file to output values*/
+    char trainFile[5000]="";    /*!< Name of the train file*/
+    char testFile[5000]="";     /*!< Name of the test file*/
+    char output_model[5000]=""; /*!< Name of output files*/
+    char pathTrace[5000]="";    /*!< Name of the file trace of best model*/
+    char path_test[5000]="";    /*!< Name of the file with unsseen test instances*/
+    char pathOutFile[5000]="";  /*!< Name of the file to output values*/
+    char pathIniFile[5000]="";  /*!< Name of the file to output values*/
     for (int i=1; i<argc-1; i++){
         if(strncmp(argv[i],"-train_file",10) == 0) {
             strcat(trainFile,argv[++i]);
@@ -55,11 +55,11 @@ int main(int argc, char **argv){
             strcat(path_test,argv[++i]);
         }else if (strncmp(argv[i],"-prediction_output",10)==0) {
             strcat(pathOutFile,argv[++i]);
-        }else if (strncmp(argv[i],"-log_path",10)==0) {
+        }else if (strncmp(argv[i],"-log_path",20)==0) {
             strcat(pathIniFile,argv[++i]);
         }     
     }
-    
+
     std::string trainFile_s(trainFile);
  
     std::string testFile_s(testFile);
@@ -73,14 +73,16 @@ int main(int argc, char **argv){
     readConfigFile(pathIni,&config); /*!< reading the parameters of the algorithm */
 
     std::string logPath (config.logPath); /* Path of directory for data files and log files generated in execution */
-        
+    // logPath = logPath + '/'; /*!< Variable that stores the path of the directory for data files and log files generated in execution */
+    // cout << "Log path: " << logPath << endl;
+    
     std::string namePopulation = "_initialPopulation.csv"; /*!< Name of file for save the initial population  */
 
     namePopulation = outputNameFiles + namePopulation;
-
+    // cout << "outputNameFiles file: " << outputNameFiles << endl;
     std::string nameRandomTrees = "_randomTrees.csv"; /*!< name of file for save the random trees */
     
-    nameRandomTrees = outputNameFiles + nameRandomTrees; 
+    nameRandomTrees = outputNameFiles + nameRandomTrees;   
     
     if (!trainFile_s.empty() && testFile_s.empty()){
 
@@ -675,10 +677,10 @@ int main(int argc, char **argv){
         vectorTracesMem = (sizeof(entry_)*config.numberGenerations*config.populationSize); /*!< Variable that stores the size in bytes of the structure to store the survival record*/
 
         std::string logPath (config.logPath); /* Path of directory for data files and log files generated in execution */
-
+        // logPath = logPath + "/"; /*!< Add a slash to the end of the path */
         std::string namePopulation = "_initialPopulation.csv"; /*!< Name of file for save the initial population  */
 
-        namePopulation = outputNameFiles + namePopulation;
+        namePopulation =  outputNameFiles + namePopulation;
 
         std::string nameRandomTrees = "_randomTrees.csv"; /*!< name of file for save the random trees */
         
@@ -686,7 +688,7 @@ int main(int argc, char **argv){
 
         /* Check if log and data diectories exists */
         checkDirectoryPath(logPath);
-        
+        // cout << "Log path: " << logPath << endl;
         float executionTime = 0, initialitionTimePopulation = 0, timeComputeSemantics = 0, generationTime = 0; /*!< Variables that store the time in milliseconds between the events mark1 and mark2.*/
 
         std::string timeExecution1 = "_processing_time"; /*!< Variable name structure responsible for indicating the run*/
@@ -716,6 +718,7 @@ int main(int argc, char **argv){
         std::string fitnessTest  = "_fitnestest"; /**/
         std::string fitnessTest2 = ".csv"; /**/
         fitnessTest = logPath + outputNameFiles + fitnessTest + fitnessTest2; /**/
+        // cout << "Fitness test file: " << fitnessTest << endl;
         std::ofstream fitTest(fitnessTest,ios::out); /*!< pointer to the file fitnesstrain.csv containing the training fitness of the best individual at each generation*/
 
 

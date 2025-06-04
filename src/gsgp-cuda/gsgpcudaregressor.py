@@ -7,7 +7,7 @@ import numpy as np
 import statistics as stats
 
 # Load data of problem 
-path =  "/media/turing/Respaldo/graficas/train_10107_30.txt"
+path =  "/home/turing/Documents/gsgp-visual/Visualizing-Semantic-Space-Exploration-in-GSGP/src/gsgp-cuda/train_10107_17.txt"
 df = pd.read_csv(path, header=None, sep='\s+')
     
 # Define row and columns of dataset
